@@ -1,5 +1,5 @@
 module.exports =  function(app){
-  var ContatosController =  {
+  var ContatoController =  {
     index:function(req,res){
       var usuario = req.session.usuario;
       var contatos = usuario.contatos;
@@ -40,5 +40,5 @@ module.exports =  function(app){
     }
 
   };
-  return ContatosController;
+  return ContatoController;
 };
