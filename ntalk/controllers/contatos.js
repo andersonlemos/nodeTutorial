@@ -4,7 +4,7 @@ module.exports =  function(app){
       var usuario = req.session.usuario;
       var contatos = usuario.contatos;
       var params = {usuario:usuario,contatos:contatos};
-      res.render('/contatos/index',params);
+      res.render('contatos/index',params);
     },
     create:function(req,res){
       var contato = req.body.contato;
@@ -16,14 +16,14 @@ module.exports =  function(app){
       var id = req.params.id;
       var contato = req.session.usuario.contatos[id];
       var params = {contato:contato,id:id}
-      res.render('/contatos/show',params);
+      res.render('contatos/show',params);
     },
     edit:function(req,res){
       var id =  req.params.id;
       var usuario = req.session.usuario;
       var contato = usuario.contatos[id];
       var params = {usuario:usuario,contato:contato,id:id}
-      res.render('/contato/edit',params);
+      res.render('contato/edit',params);
     },
     update:function(req,res){
       var id = req.params.id;
