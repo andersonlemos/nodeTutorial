@@ -25,13 +25,8 @@ load('models')
     .then('routes')
     .into(app);
 
-io.sockets.on('connection',function(client){
-  client.on('send-server',function(data){
-    var msg = '<b>'+data.nome+':</b>'+data.msg+'<br>';
-    client.broadcast.emit('send-client',msg);
-  });
-});
-
+load('sockets')
+    .into(io);
 
 app.use(error.notFound);
 app.use(error.serverError);
